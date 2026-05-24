@@ -408,7 +408,7 @@ export default function App() {
                     tickLine={false} 
                     axisLine={false}
                     dx={-5}
-                    tickFormatter={(val) => `$${val}`}
+                    tickFormatter={(value) => value === 0 ? '$0' : `$${(value / 1000).toFixed(value % 1000 === 0 ? 0 : 1)}K`}
                     tick={{ fontSize: 10, fill: '#64748b' }}
                   />
                   <Tooltip 
